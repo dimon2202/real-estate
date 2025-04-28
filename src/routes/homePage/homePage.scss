@@ -1,0 +1,113 @@
+@import "../../responsive.scss";
+
+.homePage {
+  display: flex;
+  height: 100%;
+
+  .textContainer {
+    flex: 3;
+
+    .wrapper {
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      gap: 50px;
+      height: 100%;
+
+      @include lg{
+        padding-right: 50px;
+      }
+
+      @include md{
+        padding: 0;
+      }
+
+      @include sm{
+        justify-content: flex-start;
+      }
+
+      .title {
+        font-size: 50px;
+
+        @include lg {
+          font-size: 40px;
+        }
+      }
+
+      .boxes {
+        display: flex;
+        justify-content: space-between;
+
+        .box {
+          border-left: 4px solid rgb(224, 222, 247);
+          padding-left: 10px;
+        }
+
+        @include sm {
+          display: none;
+        }
+
+        h1 {
+          font-size: 36px;
+          color: rgb(113, 102, 240);
+
+          @include lg {
+            font-size: 32px;
+          }
+        }
+
+        h2 {
+          font-size: 20px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .imgContainer {
+    flex: 2;
+    background-color: rgb(247, 247, 253);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden; // чтобы тень не вылезала за контейнер
+  
+    @include md {
+      display: none;
+    }
+  
+    img {
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      object-fit: cover; // чтобы картинка адекватно растягивалась
+  
+      @include lg {
+        width: 100%;
+      }
+    }
+  
+    // Добавляем псевдоэлемент для градиента
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px; // высота перехода, можно подстроить
+      background: linear-gradient(
+        to bottom,
+        rgb(247, 247, 253) 0%,
+        rgba(247, 247, 253, 0.7) 40%,
+        rgba(247, 247, 253, 0.3) 70%,
+        rgba(247, 247, 253, 0) 100%
+      );
+      z-index: 2;
+      pointer-events: none; // чтобы не мешал кликам
+    }
+  }
+  
+}
