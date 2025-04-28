@@ -13,18 +13,19 @@ function Navbar() {
           <img src="/logo.svg" alt="logo" />
           <span>Real Estate</span>
         </a>
-        <a href="/">Головна</a>
+        <Link to="/list">
+          <span>Головна</span>
+        </Link>
         <a href="/">Про нас</a>
-        <a href="/">Контакти</a>
+        <Link to="/login">
+          <span>Контакти</span>
+        </Link>
         <a href="/">Агенства</a>
       </div>
       <div className="right">
         {user ? (
           <div className="user">
-            <img
-              src="/profile.jpg"
-              alt="profile"
-            />
+            <img src="/profile.jpg" alt="profile" />
             <span>Олег</span>
             <Link to="/profile" className="profile">
               <div className="notification">3</div>

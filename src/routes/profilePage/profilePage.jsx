@@ -1,6 +1,7 @@
 import Chat from "../../components/chat/Chat";
 import List from "../../components/list/List";
 import "./profilePage.scss";
+import { Link } from "react-router-dom";
 
 function ProfilePage() {
   return (
@@ -13,11 +14,8 @@ function ProfilePage() {
           </div>
           <div className="info">
             <span>
-            Аватар:
-              <img
-                src="/profile.jpg"
-                alt=""
-              />
+              Аватар:
+              <img src="/profile.jpg" alt="" />
             </span>
             <span>
               Ім'я: <b>Олег</b>
@@ -28,7 +26,9 @@ function ProfilePage() {
           </div>
           <div className="title">
             <h1>Мій список</h1>
-            <button>Створити оголошення</button>
+            <Link to="/add">
+              <button>Створити оголошення</button>
+            </Link>
           </div>
           <List />
           <div className="title">
@@ -39,7 +39,7 @@ function ProfilePage() {
       </div>
       <div className="chatContainer">
         <div className="wrapper">
-          <Chat/>
+          <Chat />
         </div>
       </div>
     </div>
